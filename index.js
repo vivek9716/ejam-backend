@@ -5,8 +5,8 @@ const app = express()
 const port = process.env.PORT || 8000;
 
 app.get('/', async (req, res) => {
-  const { body } = req;
-  const { city } = body;
+  const { query } = req;
+  const { city } = query;
   if (city) {
     const data = await getCityInfo(city);
     res.json(data);
