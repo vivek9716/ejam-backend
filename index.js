@@ -1,8 +1,11 @@
 const express = require('express');
 var OAuth = require('oauth');
 
-const app = express()
+const app = express();
+
+var cors = require('cors');
 const port = process.env.PORT || 8000;
+app.use(cors());
 
 app.get('/', async (req, res) => {
   const { query } = req;
